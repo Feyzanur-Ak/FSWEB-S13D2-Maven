@@ -8,9 +8,13 @@ public class Main {
     }
 
     public static boolean isPalindrome(int number) {
-        String original = Integer.toString(number); //
-        String reversed = new StringBuilder(original).reverse().toString();
-        return original.equals(reversed);
+       number=Math.abs(number);
+       char [] digits=String .valueOf(number).toCharArray(); // 121 ["1","2","1"]
+        String reversed="";
+        for(int i=digits.length-1;i>=0;i--){
+            reversed += digits[i];
+        }
+        return  reversed.equalsIgnoreCase(String.valueOf(number));
     }
 
     public static boolean isPerfectNumber(int number) {
